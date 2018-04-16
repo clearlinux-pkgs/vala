@@ -1,3 +1,32 @@
+2018-04-15  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.40.4
+
+2018-04-15  David Hewitt  <davidmhewitt@gmail.com>
+
+	json-glib-1.0: Mark return-type of gvariant_deserialize*() as nullable
+	https://bugzilla.gnome.org/show_bug.cgi?id=795265
+
+2018-04-15  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	glib-2.0: Mark str parameter of Variant.take_string() as owned
+
+2018-04-14  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gtk+-2.0: Set NoAccessorMethod on Gtk.Radio*.group properties
+	The type of get/set_group() doesn't match the property type.
+
+	gtk+-*.0: Set NoAccessorMethod on Gtk.Radio*.group properties
+	The type of get/set_group() doesn't match the property type.
+
+	girparser: Add support for NoAccessorMethod metadata
+
+	vapi: Update GIR-based bindings
+
+	gtk+-4.0: Update to 3.93.0+fc6018f1
+
+	webkit2gtk-4.0: Update to 2.20.1
+
 2018-04-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.40.3
