@@ -1,3 +1,114 @@
+2018-05-21  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.40.6
+
+	manual: Update from wiki.gnome.org
+
+	codegen: Avoid critical for array in-parameters with custom length-type
+	Regression of 049b9b3943831e6dd242889a8196bd88b7858268
+
+	tests: Drop fatal assert on big-endian archs
+	The assert isn't required to verify this specific fix, but obviously shows
+	another underlying issue.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=796313
+
+	Release 0.40.5
+
+	glib-2.0: Fix IConv.iconv()
+	https://bugzilla.gnome.org/show_bug.cgi?id=634753
+
+2018-05-21  Evgeny Bobkin  <evgen.ibqn@gmail.com>
+
+	genie: Add support for the \uXXXX escape sequence
+	An additional checks to validate the escape sequences \xYY and \uYYYY
+	were added, where Y represents a hex digit.
+
+	Ported from 04422d716cf226b5e8a6c11306e07adbde26fd67
+
+2018-05-21  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Fix casting of length for "ref" array parameters
+
+2018-05-20  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	javascriptcoregtk-4.0: buffer of String.get_utf8_cstring() is not "ref"
+	https://bugzilla.gnome.org/show_bug.cgi?id=788113
+
+	gtk+-4.0: Update to 3.93.0+3a860719
+
+	compiler: Warn if --gir is used without --library
+	https://bugzilla.gnome.org/show_bug.cgi?id=708693
+
+	girwriter: Properly output variadic methods and use introspectable="0"
+	This also fixes several criticals caused by "ellipsis" parameter
+
+	girwriter: Drop errornous indent
+
+	scanner: Accept backreferences \1 through \99 in regex literals
+	https://bugzilla.gnome.org/show_bug.cgi?id=728574
+
+	codegen: Avoid critical in get_basic_type_info() when there is no signature
+	https://bugzilla.gnome.org/show_bug.cgi?id=729517
+
+	ccode: Properly depend on in-tree built libvala
+
+2018-05-14  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	vala: Report an error if rank attribute is required but was not found
+	https://bugzilla.gnome.org/show_bug.cgi?id=660991
+
+	genie: Add support for the \v escape charactor
+	https://bugzilla.gnome.org/show_bug.cgi?id=664689
+
+	scanner: Accept \R and \N escape sequences in regex literals
+	https://bugzilla.gnome.org/show_bug.cgi?id=749576
+
+	codegen: Fix serializing multidimensional arrays
+	The same type signature was being used for every dimension of the array.
+
+	Based on patch by Abderrahim Kitouni
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=735437
+
+2018-05-09  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Guard get_default_ref_sink_function() against null base-class
+
+	gobject-2.0: Make constructor of ParamSpecBoxed public
+
+2018-05-08  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gtk+-4.0: Update to 3.93.0+d506799e
+
+2018-05-01  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	webkit2gtk-4.0: Cherry-pick some fixes from 0.42
+
+	gstreamer: Cherry-pick some fixes from 0.42
+
+	gtk+-4.0: Update to 3.93.0+2cf55c16
+
+	gtk+-3.0: Update to 3.22.30+21fddc39
+
+	posix: Add missing cname = "int" to Posix.Signal enum
+
+2018-05-01  Michael James Gratton  <mike@vee.net>
+
+	sqlite3: Add additional constants for flags of Database.open_v2()
+	https://bugzilla.gnome.org/show_bug.cgi?id=795627
+
+2018-05-01  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Respect cname ccode-attribute of lockable fields
+	https://bugzilla.gnome.org/show_bug.cgi?id=795521
+
+	codewriter: Add 'new' to symbols if needed to match the original source
+	https://bugzilla.gnome.org/show_bug.cgi?id=614686
+
+	girparser: Deal with missing "name" attribute by falling back on "c:type"
+	This is simply a last resort to report a meaningfull error.
+
 2018-04-15  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.40.4
