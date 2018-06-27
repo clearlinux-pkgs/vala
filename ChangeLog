@@ -1,3 +1,143 @@
+2018-06-20  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.40.7
+
+2018-06-20  Stef Walter  <stefw@redhat.com>
+
+	Use default_init instead of base_init when registering interfaces
+	Using base_init() is overly complex, requires multi-initialization
+	guards, and in the case of vala generated code these are currently
+	not thread safe.
+
+	The recommended approach is to use default_init() to initialize
+	interfaces. It is called only once, solves thread safety issues.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=699550
+
+2018-06-20  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	girwriter: Don't write any custom attributes
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/608
+
+	vapi: Add gst-editing-services-1.0 bindings
+
+	codegen: Free generic elements of glib collections
+	It needs to be possible to use parameters or fields/properties which hold
+	dup/free functions for a generic type in scope.
+
+	This required to make the destroy_func being a parameter with the benefit
+	of being able to use g_*_free_all directly and adding a _g_node_free_all
+	wrapper with a compatible signature.
+
+	https://bugzilla.gnome.org/show_bug.cgi?id=694765
+
+	vapi: Update GIR-based bindings
+
+	gtk+-4.0: Update to 3.93.0+29fee2e8
+
+2018-06-18  Alistair Thomas  <astavale@yahoo.co.uk>
+
+	glib-2.0: Make Source.attach() use the default MainContext by default
+
+	codegen: Fix warning for source_funcs parameter of g_source_new()
+
+2018-06-18  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Actually treat GLib.Source as compact class
+	Make sure to not create a new dedicated struct for derived types and
+	reference them as GSource.
+
+	See https://gitlab.gnome.org/GNOME/vala/issues/641
+
+2018-06-16  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Custom abstract methods of GLib.Source are handled differently
+	Regression of 28b4f45b709622e821e86655f245fdcb75d3afaf
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/641
+
+2018-06-15  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	girwriter: construct-only properties don't have a setter method
+
+	girwriter: Output deprecated="1"
+
+	tests: Add invalid array initializer tests to increase coverage
+
+	tests: Add invalid assignment tests to increase coverage
+
+	tests: Add more invalid class tests to increase coverage
+
+	vala: Drop unreachable code
+
+	tests: Add invalid "duped constructor/destructor" test to increase coverage
+
+	tests: Add invalid "type-argument" tests to increase coverage
+
+2018-06-13  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gstreamer: Cherry-pick some fixes from 0.42
+
+	gtk+-4.0: Update to 3.93.0+b1f934d3
+
+	webkit2gtk-4.0: Update to 2.21.4
+
+	Revert "Fix make check"
+	This reverts commit c0a23c28e964e41798a22fe2866508ad2b37110e.
+
+	valadoc: Fix TreeBuilder.create_array() for stacked Arrays
+
+	codegen: Consistently use gpointer for delegate targets
+
+	glib-2.0: Make Bytes.slice() use the memory-efficient Bytes.from_bytes()
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/638
+
+	glib-2.0: Fix Bytes.with_free_func()
+
+	codegen: Unify some delegate-type check patterns
+
+	gstreamer: Cherry-pick some fixes from 0.42
+
+	gtk+-3.0: Update to 3.22.30+9ac7f906
+
+	gtk+-4.0: Update to 3.93.0+f4c1a404
+
+	glib-2.0: Do not mark simple-type out-parameters as nullable
+	Fixes g_utf8_*, g_ucs4_* and g_utf16_ bindings which were introduced with
+	5c5245d1ca3616c0d4f861efff07418ddc67e294
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/634
+
+2018-06-13  Alistair Thomas  <astavale@yahoo.co.uk>
+
+	gio-2.0: Mark ActionEntry.parameter_type/state fields as nullable
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/632
+
+2018-06-13  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gio-2.0: Delegate fields of DBus*VTable do not have implicit target fields
+
+	gio-2.0: Apply delegate_target = false on ActionEntry callbacks and make them weak
+	They break struct ABI and the "require_copy/destroy" check in codegen
+	while being defined with target.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/630
+
+	girparser: Add support for bool delegate_target
+	https://gitlab.gnome.org/GNOME/vala/issues/520
+
+	codegen: Handle delegate_target attribute of fields
+	Delegate fields without a delegate target don't require special handling
+	on copy/destroy.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/520
+
+2018-05-30  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gio-2.0: Add default to all io_priority parameters
+
+	Update bugtracker links to https://gitlab.gnome.org/GNOME/vala/issues
+
 2018-05-21  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.40.6
