@@ -4,7 +4,7 @@
 #
 Name     : vala
 Version  : 0.40.7
-Release  : 5
+Release  : 6
 URL      : https://download.gnome.org/sources/vala/0.40/vala-0.40.7.tar.xz
 Source0  : https://download.gnome.org/sources/vala/0.40/vala-0.40.7.tar.xz
 Summary  : The Vala compiler library
@@ -12,10 +12,11 @@ Group    : Development/Tools
 License  : LGPL-2.1
 Requires: vala-bin
 Requires: vala-lib
+Requires: vala-data
 Requires: vala-license
 Requires: vala-man
-Requires: vala-data
 BuildRequires : bison
+BuildRequires : buildreq-gnome
 BuildRequires : dbus
 BuildRequires : dbus-dev
 BuildRequires : flex
@@ -96,7 +97,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530083224
+export SOURCE_DATE_EPOCH=1531752160
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -108,7 +109,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1530083224
+export SOURCE_DATE_EPOCH=1531752160
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/doc/vala
 cp COPYING %{buildroot}/usr/share/doc/vala/COPYING
@@ -133,6 +134,27 @@ cp COPYING %{buildroot}/usr/share/doc/vala/COPYING
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/devhelp/books/vala-0.40/Attributes.html
+/usr/share/devhelp/books/vala-0.40/Classes.html
+/usr/share/devhelp/books/vala-0.40/Concepts.html
+/usr/share/devhelp/books/vala-0.40/Delegates.html
+/usr/share/devhelp/books/vala-0.40/Enumerated_types__Enums_.html
+/usr/share/devhelp/books/vala-0.40/Errors.html
+/usr/share/devhelp/books/vala-0.40/Expressions.html
+/usr/share/devhelp/books/vala-0.40/GIDL_metadata_format.html
+/usr/share/devhelp/books/vala-0.40/GIR_metadata_format.html
+/usr/share/devhelp/books/vala-0.40/Generics.html
+/usr/share/devhelp/books/vala-0.40/Interfaces.html
+/usr/share/devhelp/books/vala-0.40/Methods.html
+/usr/share/devhelp/books/vala-0.40/Namespaces.html
+/usr/share/devhelp/books/vala-0.40/Overview.html
+/usr/share/devhelp/books/vala-0.40/Preprocessor.html
+/usr/share/devhelp/books/vala-0.40/Statements.html
+/usr/share/devhelp/books/vala-0.40/Structs.html
+/usr/share/devhelp/books/vala-0.40/Types.html
+/usr/share/devhelp/books/vala-0.40/default.css
+/usr/share/devhelp/books/vala-0.40/index.html
+/usr/share/devhelp/books/vala-0.40/vala-0.40.devhelp2
 /usr/share/vala-0.40/vapi/alsa.deps
 /usr/share/vala-0.40/vapi/alsa.vapi
 /usr/share/vala-0.40/vapi/atk.vapi
