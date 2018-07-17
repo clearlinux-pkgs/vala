@@ -1,3 +1,73 @@
+2018-07-16  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.40.8
+
+	manual: Update from wiki.gnome.org
+
+	gstreamer-rtsp-server-1.0: Update from 1.14+ git master
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/653
+
+	gtk+-4.0: Update to 3.94.0+bf5f27c6
+
+2018-07-12  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	tests: Add invalid "empty" enum/errordomain tests to increase coverage
+
+	gio-2.0: Add custom IOError.from_errno() to make it work as expected
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/253
+
+	codewriter: Output bodies of code-blocks if in VAPIGEN mode
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/231
+
+	parser: Accept "empty" enums/error-domains
+	This drops the semantic check from the parser. Actual errors will be caught
+	later by the SemanticAnalyzer.
+
+	See https://gitlab.gnome.org/GNOME/vala/issues/253
+
+	vala: Report error for error-domains without any code
+
+	gtk+-4.0: Update to 3.94.0+7030e08f
+
+	gdk-3.0,gtk+-3.0: Update to 3.23.0+df045423
+
+2018-07-11  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gobject-2.0: Add missing symbols
+
+2018-07-06  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	girwriter: Add boolean GIR visible attribute to allow skipping symbols
+	"visibility = false" will be transformed into introspectable="0" in the
+	resulting GIR file.
+
+	Attributed namespaces will be skipped altogether.
+
+	girparser: Allow changing the type of constants using metadata
+	See https://gitlab.gnome.org/GNOME/vala/issues/643
+
+	codegen: Allow TypeModule subclasses as parameter-type in module-init-method
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/648
+
+	gobject-2.0: Add lower_case_csuffix attributes to Type* symbols
+
+	codegen: Let methods return -1 on error by default if possible
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/526
+
+	gtk+-4.0: Update to 3.94.0+14620423
+
+2018-07-06  Alistair Thomas  <astavale@yahoo.co.uk>
+
+	valadoc: Use HTML5 doctype in HTML doclet
+
+	libvaladoc: Change link to Valadoc wiki page for HTML doclet
+	See https://gitlab.gnome.org/GNOME/vala/merge_requests/12
+
+	doc: Fix links in the Manual
+	The DocBook source for the Vala Reference Manual is now only
+	available through HTTPS. Update the XSLT so links are correctly
+	translated to in document links again.
+
 2018-06-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.40.7
