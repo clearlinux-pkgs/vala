@@ -1,6 +1,8 @@
 # This file contains recursive sources that require this package
+baobab
 compat-gtksourceview-soname3
 dconf-editor
 fwupd
+geoclue
 gtksourceview
 libdazzle

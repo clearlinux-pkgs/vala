@@ -1,3 +1,78 @@
+Vala 0.42.0
+===========
+ * Bindings:
+  - gstreamer: Update from 1.15+ git master
+  - webkit2gtk-4.0: Update to 2.21.92
+  - Update GIR-based bindings
+
+Vala 0.41.92
+============
+ * Various improvements and bug fixes:
+  - codegen: Fix floating reference regression with Variants [#661]
+  - build: Correctly quote square brackets in regular expression
+  - codegen: Call ref_sink on Object.new_valist/new_with_properties if needed
+  - vala: Don't bail early on property with not supported default value
+  - manual: Update from wiki.gnome.org
+
+ * Bindings:
+  - glib-2.0: Add return-type of Queue.remove*(), add HashTable.foreach_steal()
+  - glib-2.0: Add float.parse/try_parse() [#649]
+  - gstreamer: Update from 1.15+ git master
+  - webkit2gtk-4.0: Update to 2.21.91
+
+Vala 0.41.91
+============
+ * Various bug fixes:
+   - codegen: Call ref_sink on objects passed to generic type [#655]
+   - codegen: Free errors after returning them on GDBusMethodInvocation [#657]
+   - girparser: Actually resolve type-arguments to be able to box them if needed
+   - vala: Add consts/methods to retrieve and check library version [#304]
+
+ * Bindings:
+   - glib-2.0: Add Array.remove*() wrapper to avoid leaking generic elements
+   - glib-2.0: Add (u)long.parse/try_parse() [#649]
+   - gstreamer: Update from 1.15+ git master
+   - gtk+-3.0: Update to 3.23.2+6b6e53fd
+   - gtk+-4.0: Update to 3.94.0+4e868584
+
+Vala 0.41.90
+============
+ * Highlights
+  - Reintroduce POSIX profile
+  - parser: Add support for explicit "unlock" syntax
+  - vala: Support anonymous definitions of delegates in bindings
+  - codegen: Support automatic properties as GtkChild
+  - codegen: Apply G_PARAM_EXPLICIT_NOTIFY on properties with "notify = false"
+  - codegen: Drop support for non-auto property initializer in gobjects
+  - codegen: Avoid using deprecated "g_type_class_add_private"
+
+ * Various bug fixes:
+  - vala: Constants and signals are not lockable
+  - codegen: Don't apply ref_sink_function if target_type is floating_reference
+  - vala: Treat floating method-return-type as nullable if error may be thrown
+  - vala: Transfer floating-reference attribute while casting
+  - analyzer: Break cyclic references of BasicBlock
+  - vala: Break reference chain between DataType and Symbol if possible
+  - codegen: Fix invocation of abstract/virtual methods with NoWrapper in
+    compact classes
+  - vala: Report error for invalid base access in method/property of compact
+    class
+  - libvaladoc: Replace void* with corresponding Vala API
+  - codegen: Don't include the full absolute path in line directives
+  - codegen: Add source_reference to unsupported floating reference error
+
+ * Bindings:
+  - gobject-2.0: Make GLib.Signal a struct of uint and bind g_signal_new*
+  - clutter-1.0: Change type of Clutter.Key.* constants to uint
+  - gdk-3.0: Change type of Gdk.Key.* constants to uint
+  - gtk+-4.0: Change type of Gdk.Key.* constants to uint
+  - gstreamer: Update from 1.15+ git master
+  - webkit2gtk-4.0: Add JSC namespace to javascriptcoregtk-4.0 and fix depends
+  - Remove clutter-gst-1.0, GStreamer 0.10, rest-0.6,
+    tracker-indexer-module-1.0, libsoup-2.2, gdu and gdu-gtk,
+    twitter-glib-1.0, mx-1.0
+  - Remove vala-specific deprecations <= vala-0.22
+
 Vala 0.40.8
 ===========
  * Various improvements and bug fixes:
