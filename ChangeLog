@@ -1,3 +1,39 @@
+2018-09-17  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.42.1
+
+	vapigen: Warn if the library argument doesn't match any package attribute
+	GIR files can contain a package key referring to the pkg-config name which
+	is the recommended and even required naming of a vapi.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/669
+
+	vapi: Update GIR-based bindings
+
+	gtk+-4.0: Update to 3.94.0+f3e6d00d
+
+	tests: Actually check canonical cname of properties and signals
+
+	test: Add property lock test
+
+2018-09-09  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	tests: Check uchar[] and uint8[] compatibility
+
+	vapi: Add gnome-desktop-3.0 bindings
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/668
+
+	vapi: Remove libgda-4.0, libgda-report-4.0 bindings
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/667
+
+2018-09-07  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	glib-2.0: Add some 2.58 symbols
+
+2018-09-06  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	vapi: Update GIR-based bindings
+
 2018-08-31  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.42.0

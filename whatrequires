@@ -1,8 +1,13 @@
 # This file contains recursive sources that require this package
 baobab
 compat-gtksourceview-soname3
+dconf
 dconf-editor
 fwupd
+gcr
 geoclue
 gtksourceview
+gupnp-av
+ibus
 libdazzle
+seahorse
