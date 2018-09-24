@@ -1,3 +1,71 @@
+2018-09-24  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.42.2
+
+2018-09-23  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gstreamer: Update from 1.15+ git master
+
+	gtk+-4.0: Update to 3.94.0+d90e2733
+
+	vapi: Update GIDL-based bindings to fix unsupported type-arguments
+
+	tests: Don't use deprecated syntax to connect signals
+
+	tests: Add some invalid "signal" tests to increase coverage
+
+	tests: Add some "yield" test to increase coverage
+
+	tests: Add invalid "object creation" tests to increase coverage
+
+	tests: Update field "owned to unowned" test to increase coverage
+
+	tests: Add invalid variable declaration tests to increase coverage
+
+	tests: Add invalid "property for Object() chainup" tests to increase coverage
+
+	tests: Add invalid "construct without GObject" test to increase coverage
+
+	tests: Add invalid "method to delegate" test to increase coverage
+
+	tests: Add invalid "duplicating instance" test to increase coverage
+
+	tests: Add "missing class prerequisite for interface" test to increase coverage
+
+	tests: Add "GenericAccessors" tests to increase coverage
+
+	tests: Add invalid "array concatenation" test to increase coverage
+
+	tests: Add "unsupported use of length field" test to increase coverage
+
+	codewriter: Prepend "yield" if is_yield_expression is set on MethodCall/ObjectCreationExpression
+
+2018-09-23  Alistair Thomas  <astavale@yahoo.co.uk>
+
+	glib-2.0: Add feature_test_macro details for Time struct's methods
+
+	glib-2.0: Set DateTime.now () to use local time zone as the default
+
+2018-09-23  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	valadoc: Fix some string escaping which gettext complains about
+
+	vala: Check if ArrayType supports its given element-type in analyzer pass
+
+	codegen: Fix typo in is_pure_ccode_expression()
+	Note that this method is not used anymore and should likely be dropped.
+
+	Introduced with e086fada22eb7221cdbe34d7d4ac41445a50130a
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/673
+
+	g-i: Fix use after free in scanner
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/674
+
+	x11: Add binding for XCreateSimpleWindow
+
+	libxml-2.0: Add missing context parameter in OutputWriteCallback
+
 2018-09-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.42.1

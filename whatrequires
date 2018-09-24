@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+ModemManager
 baobab
 compat-gtksourceview-soname3
 dconf
@@ -7,6 +8,7 @@ fwupd
 gcr
 geoclue
 gtksourceview
+gtkspell3
 gupnp-av
 ibus
 libdazzle
