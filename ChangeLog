@@ -1,3 +1,154 @@
+2018-11-07  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.42.3
+
+	gstreamer: Update from 1.15+ git master
+
+	gio-2.0: Result of DBusMessage.get_header() is unowned
+
+	gtk+-4.0: Update to 3.94.0+b4b30b49
+
+2018-11-06  Alistair Thomas  <astavale@yahoo.co.uk>
+
+	glib-2.0: Add array length to string.skip
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/695
+
+2018-11-06  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	vala: Don't check for GLib.Variant casting in POSIX profile
+
+2018-11-05  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Add prototype for *_new() of abstact compact classes
+	Found with -Werror=missing-prototypes
+
+	codegen: Don't emit *_free() of derived compact classes
+	Found with -Werror=missing-prototypes
+
+	codegen: Add prototype for *_register_type() function
+	Found with -Werror=missing-prototypes
+
+2018-11-05  Alistair Thomas  <astavale@yahoo.co.uk>
+
+	codegen: Add replacement for G_(BEGIN|END)_DECLS in non GOBJECT profile
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/622
+
+2018-11-05  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	libvaladoc: Add "unlock" to keywords in Highligher
+
+	vala: Fix TokenType.HASH.to_string()
+
+	codegen: Initialize internal temp-variables used as reference parameter
+	When casting Variant to multi-dimensional arrays the length fields are
+	used as out-parameters and needs to be initialized. They are not guaranteed
+	to be all set in _variant_get*() in this case.
+
+	Fixes tests with -Werror=maybe-uninitialized
+
+	glib-2.0: Add binding for g_test_add()
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/524
+
+2018-11-05  Ali Sabil  <ali.sabil@gmail.com>
+
+	codegen: Fix regex literal compile flags
+	The GRegex GRegexCompileFlags were declared as GRegexMatchFlags, leading
+	to a C compiler warning.
+
+2018-10-30  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	glib-2.0: Computing length once is enough in string.to_utf8()/splice()
+
+	tests: Add more string method tests
+
+	tests: Make "/errors/errors" test fatal
+
+	doc: Fix build of internal-api-docs
+
+	manual: Update from wiki.gnome.org
+
+2018-10-27  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	vala: Implement check() for StatementList
+
+	codegen: Improve ccode for fixed-length array parameters
+	https://gitlab.gnome.org/GNOME/vala/issues/163
+
+	gobject-2.0,gtk+-*.0: Fix some GLib.Value out/ref parameters
+	This is required due to GLib.Value being bound as struct.
+
+	vala: DataType for GLib.Error should be should resolved as ErrorType
+
+	vala: Fix several AST construction/parenting issues
+
+	testrunner: Reset $run_prefix before generating next test script
+
+	tests: Add some "using directive" tests to increase coverage
+
+	tests: Add "captured unassigned local variable" test
+
+	tests: Add "assigned local variables" tests
+
+	tests: Add implicit conversion tests for GLib.Variant
+
+2018-10-27  Luca Bruno  <lucabru@src.gnome.org>
+
+	vala: Fix and add more to_string() methods to expressions
+
+2018-10-27  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	vala: Implement get_*_variables() for ConditionalExpression
+
+2018-10-27  Luca Bruno  <lucabru@src.gnome.org>
+
+	vala: Add missing replace_expression() implementations
+
+2018-10-27  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	vala: Add some missing type copying
+
+	vala: Add source_reference to local variable of catch-clause
+
+2018-10-27  Luca Bruno  <lucabru@src.gnome.org>
+
+	vala: Always analyze nodes after they are inserted into the AST
+
+2018-10-22  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gstreamer: Update from 1.15+ git master
+
+	girwriter: Fix ctype of out/ref and array parameters
+
+	tests: Add "method override with compatible delegate parameter" test
+
+	test: Add some invalid "non-null" tests
+
+	ccode: Fix typo and actually check "end_decls"
+	Note both begin_decls and end_decls must be either not null or null.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/672
+
+	codegen: Initialize internal temp-variables used as reference parameter
+	Variables for delegate-targets and array-lengths passed as reference in
+	method calls should be initialized to fix "make check" with -O3.
+
+	gstreamer: Update from 1.15+ git master
+
+	codegen: Make unreachable error an internal error
+	This is meant to be caught in ElementAccess.check()
+
+	codegen: Replace invalid array-length assert with internal error
+	While the test-suite triggers this assert with an invalid test an explicit
+	crash is not wanted.
+
+	tests: Extent "girwriter" test to increase coverage
+
+	build: Unconditionally add conditional VALAFLAGS to make bootstrap
+	This avoids another configure pass after an initial build with an older
+	valac <= 0.39.5.8.
+
+	See https://gitlab.gnome.org/GNOME/gnome-build-meta/issues/44
+
 2018-09-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.42.2
