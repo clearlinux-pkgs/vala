@@ -16,5 +16,7 @@ gtkspell3
 gupnp-av
 ibus
 libdazzle
+libxfce4ui
 lightdm
 seahorse
+xfce4-panel

@@ -4,7 +4,7 @@
 #
 Name     : vala
 Version  : 0.42.3
-Release  : 13
+Release  : 14
 URL      : https://download.gnome.org/sources/vala/0.42/vala-0.42.3.tar.xz
 Source0  : https://download.gnome.org/sources/vala/0.42/vala-0.42.3.tar.xz
 Summary  : The Vala compiler library
@@ -31,14 +31,6 @@ Vala is a programming language that aims to bring modern programming
 language features to GNOME developers without imposing any additional
 runtime requirements and without using a different ABI compared to
 applications and libraries written in C.
-
-%package abi
-Summary: abi components for the vala package.
-Group: Default
-
-%description abi
-abi components for the vala package.
-
 
 %package bin
 Summary: bin components for the vala package.
@@ -105,7 +97,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542083022
+export SOURCE_DATE_EPOCH=1542758189
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -117,7 +109,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1542083022
+export SOURCE_DATE_EPOCH=1542758189
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vala
 cp COPYING %{buildroot}/usr/share/package-licenses/vala/COPYING
@@ -126,11 +118,6 @@ cp COPYING %{buildroot}/usr/share/package-licenses/vala/COPYING
 %files
 %defattr(-,root,root,-)
 /usr/lib64/vala-0.42/gen-introspect-0.42
-
-%files abi
-%defattr(-,root,root,-)
-/usr/share/abi/libvala-0.42.so.0.abi
-/usr/share/abi/libvaladoc-0.42.so.0.abi
 
 %files bin
 %defattr(-,root,root,-)
