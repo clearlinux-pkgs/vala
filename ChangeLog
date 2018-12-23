@@ -1,3 +1,259 @@
+2018-12-20  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.42.4
+
+	gtk+-4.0: Update to 3.94.0+a99bd2a4
+
+	gtk+-3.0: Update to 3.24.2+eb821cb8
+
+	gstreamer: Update from 1.15+ git master
+
+	poppler-glib: Update to 0.71
+
+2018-12-18  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gobject-introspection-1.0: Pick up version attribute fixes
+
+	vapi: Regenerate GIR-based bindings to fix non-standard async methods
+	See https://gitlab.gnome.org/GNOME/vala/issues/709
+
+	codegen: Handle non-default AsyncResult parameter position
+	Unfortunately gdbus-codegen puts the AsyncResult parameter after possible
+	out-parameters therefore there is an "async_result_pos" attribute required
+	to handle this correctly.
+
+	Vala supposely follows the common practice to put the AsyncResult before
+	out-parameters by default.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/709
+
+	codegen: Always emit constants with initializer-list
+	generate_constant_declaration() handles both definition and declaration.
+
+	This is important when using --use-header where the actual definition
+	would never be written and we ended up with an "extern const ..." in the
+	header only.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/81
+
+	tests: Add "emit order" tests
+
+	codegen: Emit delegate/enum typedefs to type-declaration section
+	This fixes compilation of circular dependency of delegates with enums,
+	structs, classes and interfaces.
+
+	Resolve interface prerequisites after writing forward declarations to
+	fix entagled delegate dependencies in them.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/318
+
+	tests: Add "subtype cycle" tests to increase coverage
+
+2018-12-18  Florian Brosch  <flo.brosch@gmail.com>
+
+	vala: Break possible endless loop in SymbolResolver.get_type_for_struct()
+	Required to deal with invalid code containing base struct cycles.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/444
+
+2018-12-06  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	glib-2.0: Add GLib.pointer aka gpointer binding
+
+	testrunner: Pass buildsystem's CC through to valac
+
+2018-12-05  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gtk+-4.0: Update to 3.94.0+8de1ba2c
+
+	gstreamer: Update from 1.15+ git master
+
+	girparser: Skip possible docs in transparent union
+	See https://gitlab.gnome.org/GNOME/gobject-introspection/merge_requests/75
+
+2018-12-04  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	girparser: Skip "source-position" elements
+	See https://gitlab.gnome.org/GNOME/gobject-introspection/merge_requests/75
+
+2018-12-04  Vivek Raj  <vivekrajr@live.com>
+
+	vala: Use clearer error message for automatic properties in interfaces
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/656
+
+2018-12-04  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Emit initializer for enum-value into wanted declaration space
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/167
+
+2018-12-04  Timm Bäder  <mail@baedert.org>
+
+	codegen: Mark needle parameter of internal array-contains methods as const
+	This will avoid some -Wdiscarded-qualifiers warnings.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/504
+
+2018-12-04  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	vala: Don't emit member access of assignments on static properties
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/573
+
+	vala: Make check_arguments() more verbose and don't bail on first error
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/438
+
+	vala: Type check for errors require an error expression
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/362
+
+	tests: Simplify "errors/errors" test a bit
+
+	vala: Add missing re-check guards for Do/For/WhileStatement and SwitchLabel
+
+	tests: Add and improve "foreach iterator" tests to increase coverage
+
+	tests: Add invalid "switch" tests to increase coverage
+
+2018-11-26  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	codegen: Actually create method cast for base interface method as needed
+	Keep the fallback to base method for now.
+
+	This will silence some incompatible pointer type warnings.
+
+	glib-2.0: Cast strcmp to GCompareFunc
+	This will silence some incompatible pointer type warnings.
+
+	tests: Add default defines test for VALA_0_XX and GLIB_2_XX
+
+	codegen: Don't emit unused temp variable for element access assignments
+	Regression of 2bcda488725cf28b3c3c358f2c348632bb7ba232
+
+	tests: Extend assignment and array element access tests
+
+	codegen: Don't emit type_id for enum in non GOBJECT profile
+
+	tests: Add some minimal test cases to catch insufficient headers
+
+	codegen: Make sure to include declarations for delegate typed parameters
+	So call generate_type_declaration() with all parameter types.
+
+	gtk+-4.0: Update to 3.94.0+40ae5c13
+
+	gdk-x11-3.0,gtk+-3.0: Update to 3.24.1+356f1f59
+
+	gstreamer: Update from 1.15+ git master
+
+	parser: Use comment which was already retrieved in parse_declaration()
+	This caused to loose comment of first element of enums and error domains.
+
+	Regression of 540aa1492c342f482be6838b97f54437f3b776e4
+
+2018-11-26  Alistair Thomas  <astavale@yahoo.co.uk>
+
+	docs: Update build instructions and move them to README.md
+	Updates the links for building Vala and how to bootstrap the build
+
+	docs: Use Markdown for README and move to README.md
+
+2018-11-26  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	gobject-2.0: Attribute all symbols with cheader_filename = "glib-object.h"
+	This is essential to pick up the correct header inclusion while the GLib
+	namespace of glib-2.0 and gobject-2.0 is merged internally.
+
+	ccode: Add void to delegate typedef declarations without parameters
+	Found with -Werror=strict-prototypes
+
+2018-11-26  Michael James Gratton  <mike@vee.net>
+
+	valadoc: Adjust stylesheet to unbreak Epiphany
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/644
+
+2018-11-26  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	valadoc: Fix a few errors and warnings in stylesheet
+
+	girwriter: Write glib-type attributes for Enums/Structs with type_id
+
+	codegen: Fix canonical string for quark of error domains
+
+	vala: Compact classes don't allow private/class fields and to lock fields
+	This conveniently moves 2 error reports from codegen to semantic check too.
+
+	vala: Remove superfluous return_if_fail()
+
+	tests: Add "static fields" to compact class to increase coverage
+
+	tests: Add bug specific "lock test"
+	https://bugzilla.gnome.org/show_bug.cgi?id=629593
+
+	genieparser: Use dedicated Class.add_constructor/destructor() methods
+
+2018-11-26  Corentin Noël  <corentin@elementary.io>
+
+	tests: Add more GLib.Array tests
+
+	codegen: Add destroy function for GLib.Array
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/572
+
+	glib-2.0: Avoid double-free in GLib.Array if clear_func is set
+
+2018-11-26  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	glib-2.0: Add missing Array.set_clear_func() binding
+
+	libvaladoc: Use Scanner.get_identifier_or_keyword() instead of outdated copy
+
+	tests: Add enum/errordomain tests for GIR parser to increase coverage
+
+	doc: Include dependencies for internal-api-docs to get reference linking
+
+	valadoc/html: Skip package dependency if target directory already exists
+	Simply assume we already generated the documentation for this dependency
+	in a previous invocation running with --deps.
+
+	libvaladoc: Add type_id to Api.Enum/Interface
+
+	libvaladoc: Link against private libvalaccodegen
+
+	libvaladoc: Actually assign type_id of Api.Structs
+
+	libvaladoc/html: Sort symbols and members where possible
+
+	libvaladoc: Match property signature with vala's codewriter
+
+	codegen: Transfer ownership of compact class to DestroysInstance method
+	Otherwise it is impossible to call an instance method of a compact class
+	which is a destructor.
+
+	See https://gitlab.gnome.org/GNOME/vala/issues/645
+
+2018-11-26  Corentin Noël  <corentin@elementary.io>
+
+	gio-2.0: Add missing File.new_build_filename()
+
+2018-11-26  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	glib-2.0: Replace ctype ccode-attributes with type
+
+	gio-2.0: Replace finish_function ccode-attributes with finish_name
+
+	vapi: Some random fixes on old bindings
+
+	vala: Copy CCode instance_pos argument from virtual/abstract base methods
+	https://bugzilla.gnome.org/show_bug.cgi?id=540483
+
+	vala: Add CodeNode.copy_attribute_*() helper methods
+	Provides an easy way to copy a specific attribute argument from another
+	code node if the source has it set.
+
+	tests: Avoid use of g_ptr_array_find() which requires glib >= 2.54
+
+	tests: Add GenericArray (GPtrArray) tests
+
+	codegen: Fix method pointer cast if instance isn't at first position
+	By unconditionally putting the instance at first position the CCode
+	instance_pos attribute was not accounted for.
+
 2018-11-07  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.42.3
