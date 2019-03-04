@@ -1,3 +1,82 @@
+2019-03-03  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	Release 0.42.6
+
+2019-02-28  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	girwriter: Always use get_gir_name() for TypeSymbols
+
+	poppler-glib: Update to 0.74
+
+2019-02-26  Rico Tzschichholz  <ricotz@ubuntu.com>
+
+	tests: Extent "girwriter" test to increase coverage
+
+	girwriter: Support transfer-ownership="container" for arrays
+
+	gobject-2.0: Add SignalHandler.disconnect_by_data()
+
+	codegen: Respect array_length_cname attribute for global fields
+
+	tests: Add "custom types" struct tests to increase coverage
+
+	tests: Add "constructor chain up" generics test to increase coverage
+
+	tests: Add "null-terminated array" delegate test to increase coverage
+
+	tests: Add "struct in array" test to increase coverage
+
+	tests: Add "to_string" enum test to increase coverage
+
+	tests: Add regression test for modulo operation on double and float
+	https://bugzilla.gnome.org/show_bug.cgi?id=610660
+
+	girparser: Correctly set array_length_type for delegates returning an array
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/754
+
+	atk-1.0: Adjust for upstream revert of Implementor using G_DEFINE_INTERFACE
+	See https://gitlab.gnome.org/GNOME/atk/commit/96d13ae47f6f77445483ee8a0d7d6569a95f35bf
+
+	libvaladoc: Properly support the output of async constructors
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/753
+
+	clutter-1.0: Drop deprecated from Actor.pick()
+	The signal "pick" was deprecated with 1.12, but not the virtual method.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/625
+
+	valadoc: Report warning if resources for doclet could not be copied
+
+	vapi: Drop gdk-x11-3.0 from GIDL_BINDINGS
+
+	gtk+-unix-print-*.0: Fix PrintJob.get_page_ranges(), Printer.get_hard_margins()
+
+	codegen: Pass lambda expression of variable initializer to signal connect
+
+	gdk-3.0: Update to 3.24.4+a0129f55
+
+	g-i: Fix return value on error in start_discriminator()
+
+	libvaladoc: Don't change the size of an array in-parameter
+	Avoid a possible memory issue while the resize of an array reference is
+	possible, the new length can't be propagated back to the caller.
+
+	Issue an warning for unexpected string lengths.
+
+	vala: Parser doesn't ensure "protected" to be applied on TypeSymbol members
+	Probably ObjectTypeSymbol should be enforced.
+
+	vala: Check inferred variable_type of LocalVariables
+
+	codegen: Properly handle and catch inner-error of finally-block
+	If all inner-errors are caught there is no jump-out of the current finally-
+	block therefore the control-flow analyzer is happy. To make this work the
+	surrounding inner-error must not be used or changed here.
+
+	Fixes https://gitlab.gnome.org/GNOME/vala/issues/742
+
+	codegen: Replace some unfortunate asserts with internal error reports
+
 2019-01-22  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	Release 0.42.5

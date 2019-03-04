@@ -1,5 +1,4 @@
 # This file contains recursive sources that require this package
-ModemManager
 PackageKit
 baobab
 compat-gmime-26
@@ -7,17 +6,21 @@ compat-gtksourceview-soname3
 dconf
 dconf-editor
 fwupd
+gcab
 gcr
 gedit
 geoclue
 gexiv2
+gitg
 gmime
-gnome-online-accounts
 gtksourceview
 gtkspell3
 gupnp-av
 ibus
+libchamplain
 libdazzle
+libfm
+libgit2-glib
 libxfce4ui
 lightdm
 seahorse
