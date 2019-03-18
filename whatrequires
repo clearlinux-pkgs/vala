@@ -2,6 +2,7 @@
 PackageKit
 baobab
 compat-gmime-26
+compat-gspell-soname1
 compat-gtksourceview-soname3
 dconf
 dconf-editor
@@ -13,6 +14,8 @@ geoclue
 gexiv2
 gitg
 gmime
+grilo
+gspell
 gtksourceview
 gtkspell3
 gupnp-av
@@ -21,6 +24,8 @@ libchamplain
 libdazzle
 libfm
 libgit2-glib
+libgweather
+libsoup
 libxfce4ui
 lightdm
 seahorse
