@@ -555,6 +555,7 @@ libvala-0.44.so.0:vala_data_type_get_pointer_member
 libvala-0.44.so.0:vala_data_type_get_return_type
 libvala-0.44.so.0:vala_data_type_get_type
 libvala-0.44.so.0:vala_data_type_get_type_arguments
+libvala-0.44.so.0:vala_data_type_get_type_signature
 libvala-0.44.so.0:vala_data_type_get_value_owned
 libvala-0.44.so.0:vala_data_type_has_type_arguments
 libvala-0.44.so.0:vala_data_type_infer_type_argument
