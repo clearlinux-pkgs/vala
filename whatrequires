@@ -1,6 +1,7 @@
 # This file contains recursive sources that require this package
 PackageKit
 baobab
+colord
 compat-gmime-26
 compat-gspell-soname1
 compat-gtksourceview-soname3
@@ -14,6 +15,7 @@ geoclue
 gexiv2
 gitg
 gmime
+gnome-online-accounts
 grilo
 gspell
 gtksourceview
