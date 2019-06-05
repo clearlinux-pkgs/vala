@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+ModemManager
 PackageKit
 baobab
 colord
@@ -27,7 +28,10 @@ libdazzle
 libfm
 libgit2-glib
 libsoup
+libvirt-glib
 libxfce4ui
+libxfce4util
 lightdm
 seahorse
+spice-gtk
 xfce4-panel
