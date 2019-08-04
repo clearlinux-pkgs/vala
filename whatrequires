@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+Gradio
 ModemManager
 PackageKit
 baobab
@@ -8,6 +9,7 @@ compat-gspell-soname1
 compat-gtksourceview-soname3
 dconf
 dconf-editor
+folks
 fwupd
 gcab
 gcr
@@ -23,6 +25,7 @@ gtksourceview
 gtkspell3
 gupnp-av
 ibus
+libappindicator
 libchamplain
 libdazzle
 libfm
@@ -33,4 +36,6 @@ libxfce4ui
 libxfce4util
 lightdm
 seahorse
+spice-gtk
 xfce4-panel
+xfconf
