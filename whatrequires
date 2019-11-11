@@ -14,6 +14,7 @@ fwupd
 gcab
 gcr
 gedit
+gegl
 geoclue
 gexiv2
 gitg
@@ -23,7 +24,6 @@ gtkspell3
 gupnp-av
 ibus
 libappindicator
-libchamplain
 libdazzle
 libfm
 libgit2-glib
