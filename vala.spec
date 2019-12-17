@@ -4,7 +4,7 @@
 #
 Name     : vala
 Version  : 0.46.5
-Release  : 33
+Release  : 34
 URL      : https://download.gnome.org/sources/vala/0.46/vala-0.46.5.tar.xz
 Source0  : https://download.gnome.org/sources/vala/0.46/vala-0.46.5.tar.xz
 Summary  : The Vala compiler library
@@ -95,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1574702143
+export SOURCE_DATE_EPOCH=1576599602
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -115,7 +115,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1574702143
+export SOURCE_DATE_EPOCH=1576599602
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vala
 cp %{_builddir}/vala-0.46.5/COPYING %{buildroot}/usr/share/package-licenses/vala/caeb68c46fa36651acf592771d09de7937926bb3
