@@ -2,7 +2,6 @@
 Gradio
 ModemManager
 PackageKit
-automake
 baobab
 colord
 compat-gmime-26
@@ -10,6 +9,7 @@ compat-gspell-soname1
 compat-gtksourceview-soname3
 dconf
 dconf-editor
+dino
 folks
 fwupd
 gcab
@@ -28,6 +28,7 @@ libappindicator
 libdazzle
 libfm
 libgit2-glib
+librsvg
 libsoup
 libvirt-glib
 libxfce4ui
@@ -35,5 +36,6 @@ libxfce4util
 lightdm
 seahorse
 spice-gtk
+uhttpmock
 xfce4-panel
 xfconf
