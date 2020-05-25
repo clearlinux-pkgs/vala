@@ -4,8 +4,6 @@ ModemManager
 PackageKit
 baobab
 colord
-compat-gmime-26
-compat-gspell-soname1
 compat-gtksourceview-soname3
 dconf
 dconf-editor
@@ -22,7 +20,6 @@ gitg
 gpaste
 gtksourceview
 gtkspell3
-gupnp-av
 ibus
 libappindicator
 libdazzle

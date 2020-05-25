@@ -1,4 +1,3 @@
 Configure miss: whether C compiler accepts -Werror=compare-distinct-pointer-types
 Configure miss: whether C compiler accepts -Werror=strict-prototypes
-Configure miss: whether C compiler accepts -Werror=enum-conversion
 Configure miss: weasyprint
