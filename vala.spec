@@ -4,7 +4,7 @@
 #
 Name     : vala
 Version  : 0.50.0
-Release  : 42
+Release  : 43
 URL      : https://download.gnome.org/sources/vala/0.50/vala-0.50.0.tar.xz
 Source0  : https://download.gnome.org/sources/vala/0.50/vala-0.50.0.tar.xz
 Summary  : The Vala compiler library
