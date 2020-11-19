@@ -1,7 +1,6 @@
 # This file contains recursive sources that require this package
 Gradio
 ModemManager
-PackageKit
 babl
 baobab
 colord
@@ -24,13 +23,14 @@ gtkspell3
 ibus
 libappindicator
 libdazzle
+libdbusmenu
 libfm
 libgit2-glib
-librsvg
 libsoup
 libvirt-glib
 libxfce4ui
 libxfce4util
+libxklavier
 lightdm
 seahorse
 spice-gtk
