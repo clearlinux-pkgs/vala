@@ -1027,6 +1027,7 @@ libvala-0.50.so.0:vala_method_set_is_async_callback
 libvala-0.50.so.0:vala_method_set_is_inline
 libvala-0.50.so.0:vala_method_set_is_virtual
 libvala-0.50.so.0:vala_method_set_overrides
+libvala-0.50.so.0:vala_method_set_params_array_var
 libvala-0.50.so.0:vala_method_set_printf_format
 libvala-0.50.so.0:vala_method_set_returns_floating_reference
 libvala-0.50.so.0:vala_method_set_returns_modified_pointer
@@ -2145,6 +2146,7 @@ libvaladoc-0.50.so.0:valadoc_charts_simple_factory_new
 libvaladoc-0.50.so.0:valadoc_comment_scanner_construct
 libvaladoc-0.50.so.0:valadoc_comment_scanner_get_type
 libvaladoc-0.50.so.0:valadoc_comment_scanner_new
+libvaladoc-0.50.so.0:valadoc_compat_gvc_graph_create_edge
 libvaladoc-0.50.so.0:valadoc_compat_gvc_graph_create_node
 libvaladoc-0.50.so.0:valadoc_compat_gvc_graph_new
 libvaladoc-0.50.so.0:valadoc_compat_gvc_init
