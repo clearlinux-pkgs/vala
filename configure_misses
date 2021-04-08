@@ -1,5 +1,5 @@
-Configure miss: whether C compiler accepts -Werror=return-stack-address
+Configure miss: weasyprint
 Configure miss: whether C compiler accepts -Werror=compare-distinct-pointer-types
+Configure miss: whether C compiler accepts -Werror=return-stack-address
 Configure miss: whether C compiler accepts -Werror=strict-prototypes
 Configure miss: whether C compiler accepts -Werror=tautological-pointer-compare
-Configure miss: weasyprint
