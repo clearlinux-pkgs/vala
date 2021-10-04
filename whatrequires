@@ -5,6 +5,7 @@ babl
 baobab
 colord
 compat-gtksourceview-soname3
+compat-libsoup-soname-24
 dconf
 dconf-editor
 dino
