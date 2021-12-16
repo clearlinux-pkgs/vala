@@ -1,5 +1,5 @@
 PKG_NAME := vala
-URL = https://download.gnome.org/sources/vala/0.54/vala-0.54.4.tar.xz
+URL = https://download.gnome.org/sources/vala/0.54/vala-0.54.5.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
