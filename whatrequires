@@ -20,6 +20,7 @@ gexiv2
 gitg
 gpaste
 gtksourceview
+gtksourceview4
 gtkspell3
 ibus
 libaccounts-glib
@@ -29,6 +30,7 @@ libdbusmenu
 libfm
 libgit2-glib
 libjcat
+libportal
 libsoup
 libvirt-glib
 libxfce4ui
