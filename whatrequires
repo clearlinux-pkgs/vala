@@ -40,5 +40,6 @@ lightdm
 seahorse
 spice-gtk
 uhttpmock
+umockdev
 xfce4-panel
 xfconf
