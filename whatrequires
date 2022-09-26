@@ -4,6 +4,7 @@ ModemManager
 babl
 baobab
 colord
+compat-gcr-soname1
 compat-gtksourceview-soname3
 compat-libsoup-soname-24
 dconf
