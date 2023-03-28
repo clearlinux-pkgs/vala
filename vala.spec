@@ -5,7 +5,7 @@
 #
 Name     : vala
 Version  : 0.56.5
-Release  : 72
+Release  : 73
 URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.5.tar.xz
 Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.5.tar.xz
 Summary  : The Vala compiler library
@@ -23,6 +23,10 @@ BuildRequires : dbus
 BuildRequires : dbus-dev
 BuildRequires : flex
 BuildRequires : help2man
+BuildRequires : pkgconfig(glib-2.0)
+BuildRequires : pkgconfig(gmodule-2.0)
+BuildRequires : pkgconfig(gobject-2.0)
+BuildRequires : pkgconfig(libgvc)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -96,7 +100,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679926249
+export SOURCE_DATE_EPOCH=1680043408
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -116,7 +120,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1679926249
+export SOURCE_DATE_EPOCH=1680043408
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vala
 cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/vala/caeb68c46fa36651acf592771d09de7937926bb3 || :
