@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : vala
-Version  : 0.56.5
-Release  : 73
-URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.5.tar.xz
-Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.5.tar.xz
+Version  : 0.56.6
+Release  : 74
+URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.6.tar.xz
+Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.6.tar.xz
 Summary  : The Vala compiler library
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -92,15 +92,15 @@ man components for the vala package.
 
 
 %prep
-%setup -q -n vala-0.56.5
-cd %{_builddir}/vala-0.56.5
+%setup -q -n vala-0.56.6
+cd %{_builddir}/vala-0.56.6
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680043408
+export SOURCE_DATE_EPOCH=1680622213
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -120,7 +120,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1680043408
+export SOURCE_DATE_EPOCH=1680622213
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vala
 cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/vala/caeb68c46fa36651acf592771d09de7937926bb3 || :
@@ -478,6 +478,8 @@ cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/
 /usr/share/vala-0.56/vapi/webkitgtk-6.0.vapi
 /usr/share/vala-0.56/vapi/webkitgtk-web-extension-6.0.deps
 /usr/share/vala-0.56/vapi/webkitgtk-web-extension-6.0.vapi
+/usr/share/vala-0.56/vapi/webkitgtk-web-process-extension-6.0.deps
+/usr/share/vala-0.56/vapi/webkitgtk-web-process-extension-6.0.vapi
 /usr/share/vala-0.56/vapi/x11.vapi
 /usr/share/vala-0.56/vapi/xcb-icccm.deps
 /usr/share/vala-0.56/vapi/xcb-icccm.vapi
