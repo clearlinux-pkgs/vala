@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : vala
-Version  : 0.56.7
-Release  : 75
-URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.7.tar.xz
-Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.7.tar.xz
+Version  : 0.56.8
+Release  : 76
+URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.8.tar.xz
+Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.8.tar.xz
 Summary  : The Vala compiler library
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -92,46 +92,74 @@ man components for the vala package.
 
 
 %prep
-%setup -q -n vala-0.56.7
-cd %{_builddir}/vala-0.56.7
+%setup -q -n vala-0.56.8
+cd %{_builddir}/vala-0.56.8
+pushd ..
+cp -a vala-0.56.8 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681835121
+export SOURCE_DATE_EPOCH=1685031272
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 %configure --disable-static
 make  %{?_smp_mflags}
 
+unset PKG_CONFIG_PATH
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
+%configure --disable-static
+make  %{?_smp_mflags}
+popd
 %check
 export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check || :
+cd ../buildavx2;
+make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1681835121
+export SOURCE_DATE_EPOCH=1685031272
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vala
 cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/vala/caeb68c46fa36651acf592771d09de7937926bb3 || :
+pushd ../buildavx2/
+%make_install_v3
+popd
 %make_install
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
+/V3/usr/lib64/vala-0.56/gen-introspect-0.56
 /usr/lib64/vala-0.56/gen-introspect-0.56
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/vala
+/V3/usr/bin/vala-0.56
+/V3/usr/bin/valac
+/V3/usr/bin/valac-0.56
+/V3/usr/bin/valadoc
+/V3/usr/bin/valadoc-0.56
+/V3/usr/bin/vapigen
+/V3/usr/bin/vapigen-0.56
 /usr/bin/vala
 /usr/bin/vala-0.56
 /usr/bin/vala-gen-introspect
@@ -525,6 +553,8 @@ cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libvala-0.56.so
+/V3/usr/lib64/libvaladoc-0.56.so
 /usr/include/vala-0.56/vala.h
 /usr/include/vala-0.56/valagee.h
 /usr/include/valadoc-0.56/valadoc.h
@@ -538,6 +568,14 @@ cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/libvala-0.56.so.0
+/V3/usr/lib64/libvala-0.56.so.0.0.0
+/V3/usr/lib64/libvaladoc-0.56.so.0
+/V3/usr/lib64/libvaladoc-0.56.so.0.0.0
+/V3/usr/lib64/vala-0.56/libvalaccodegen.so
+/V3/usr/lib64/valadoc-0.56/doclets/devhelp/libdoclet.so
+/V3/usr/lib64/valadoc-0.56/doclets/gtkdoc/libdoclet.so
+/V3/usr/lib64/valadoc-0.56/doclets/html/libdoclet.so
 /usr/lib64/libvala-0.56.so.0
 /usr/lib64/libvala-0.56.so.0.0.0
 /usr/lib64/libvaladoc-0.56.so.0

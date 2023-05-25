@@ -1,6 +1,7 @@
 # This file contains recursive sources that require this package
 Gradio
 ModemManager
+accountsservice
 babl
 baobab
 colord
@@ -32,6 +33,7 @@ libfm
 libgit2-glib
 libjcat
 libportal
+libproxy
 libsoup
 libvirt-glib
 libxfce4ui
