@@ -5,7 +5,7 @@
 #
 Name     : vala
 Version  : 0.56.8
-Release  : 76
+Release  : 77
 URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.8.tar.xz
 Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.8.tar.xz
 Summary  : The Vala compiler library
@@ -103,7 +103,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685031272
+export SOURCE_DATE_EPOCH=1685492261
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -135,7 +135,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1685031272
+export SOURCE_DATE_EPOCH=1685492261
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vala
 cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/vala/caeb68c46fa36651acf592771d09de7937926bb3 || :
@@ -152,13 +152,8 @@ popd
 
 %files bin
 %defattr(-,root,root,-)
-/V3/usr/bin/vala
-/V3/usr/bin/vala-0.56
-/V3/usr/bin/valac
 /V3/usr/bin/valac-0.56
-/V3/usr/bin/valadoc
 /V3/usr/bin/valadoc-0.56
-/V3/usr/bin/vapigen
 /V3/usr/bin/vapigen-0.56
 /usr/bin/vala
 /usr/bin/vala-0.56
@@ -553,8 +548,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libvala-0.56.so
-/V3/usr/lib64/libvaladoc-0.56.so
 /usr/include/vala-0.56/vala.h
 /usr/include/vala-0.56/valagee.h
 /usr/include/valadoc-0.56/valadoc.h
@@ -568,9 +561,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libvala-0.56.so.0
 /V3/usr/lib64/libvala-0.56.so.0.0.0
-/V3/usr/lib64/libvaladoc-0.56.so.0
 /V3/usr/lib64/libvaladoc-0.56.so.0.0.0
 /V3/usr/lib64/vala-0.56/libvalaccodegen.so
 /V3/usr/lib64/valadoc-0.56/doclets/devhelp/libdoclet.so
