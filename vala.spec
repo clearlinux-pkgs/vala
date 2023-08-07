@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : vala
-Version  : 0.56.9
-Release  : 78
-URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.9.tar.xz
-Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.9.tar.xz
+Version  : 0.56.10
+Release  : 79
+URL      : https://download.gnome.org/sources/vala/0.56/vala-0.56.10.tar.xz
+Source0  : https://download.gnome.org/sources/vala/0.56/vala-0.56.10.tar.xz
 Summary  : The Vala compiler library
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -92,10 +92,10 @@ man components for the vala package.
 
 
 %prep
-%setup -q -n vala-0.56.9
-cd %{_builddir}/vala-0.56.9
+%setup -q -n vala-0.56.10
+cd %{_builddir}/vala-0.56.10
 pushd ..
-cp -a vala-0.56.9 buildavx2
+cp -a vala-0.56.10 buildavx2
 popd
 
 %build
@@ -103,7 +103,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1688411900
+export SOURCE_DATE_EPOCH=1691432861
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -135,7 +135,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || : || :
 
 %install
-export SOURCE_DATE_EPOCH=1688411900
+export SOURCE_DATE_EPOCH=1691432861
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/vala
 cp %{_builddir}/vala-%{version}/COPYING %{buildroot}/usr/share/package-licenses/vala/caeb68c46fa36651acf592771d09de7937926bb3 || :
