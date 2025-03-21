@@ -2,8 +2,6 @@ Configure miss: library containing yywrap
 Configure miss: library containing yywrap
 Configure miss: weasyprint
 Configure miss: weasyprint
-Configure miss: whether C compiler accepts -Werror=compare-distinct-pointer-types
-Configure miss: whether C compiler accepts -Werror=compare-distinct-pointer-types
 Configure miss: whether C compiler accepts -Werror=return-stack-address
 Configure miss: whether C compiler accepts -Werror=return-stack-address
 Configure miss: whether C compiler accepts -Werror=tautological-pointer-compare
